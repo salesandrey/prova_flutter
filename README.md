@@ -83,6 +83,14 @@ Utilize o comando **flutter test** para executar os testes unitários
 
 Utilize o comando  **flutter test integration_test/login/login_test.dart** para executar um caso de uso do teste de integração E2E.
 
+## Gerenciamento de Estado
+
+Utilizado Mobx
+
+## Sistema de Rotas
+
+Utilizado as rotas do flutter modular.
+
 
 
 
