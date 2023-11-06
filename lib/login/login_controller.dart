@@ -4,6 +4,7 @@
 
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
+import 'package:tecnical_test/login/domain/usecases/login_usecase.dart';
 import 'package:tecnical_test/login/domain/utils/login_validate_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -13,9 +14,7 @@ class LoginController = LoginControllerBase with _$LoginController;
 
 abstract class LoginControllerBase with Store {
 
-  final String credentialLogin = "admin";
-  final String credentialPassword = "1234";
-
+  final LoginUseCase _loginUseCase = Modular.get<LoginUseCase>();
   final LoginValidateUtils _validateFields = LoginValidateUtils();
 
   @observable
@@ -52,7 +51,7 @@ abstract class LoginControllerBase with Store {
   redirectPrivacyPage() => launchUrl(Uri.parse("https://www.google.com/"));
 
   @action
-  login() {
+  login() async {
 
     setErrorAccount("");
     setErrorPassword("");
@@ -63,12 +62,14 @@ abstract class LoginControllerBase with Store {
 
     if(validateAccount.$1 && validatePassword.$1) {
 
-      if(account == credentialLogin && password == credentialPassword) {
+      (bool,String) result = await _loginUseCase.call(account, password);
+
+      if(result.$1) {
         Modular.to.pushReplacementNamed("/home");
       }
 
       else{
-        setErrorAccount("Usuario e/ou Senha invalidos. Tente novamente.");
+        setErrorAccount(result.$2);
       }
     }
 
