@@ -104,17 +104,6 @@ mixin _$HomeController on HomeControllerBase, Store {
   }
 
   @override
-  dynamic requestFocus() {
-    final _$actionInfo = _$HomeControllerBaseActionController.startAction(
-        name: 'HomeControllerBase.requestFocus');
-    try {
-      return super.requestFocus();
-    } finally {
-      _$HomeControllerBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
   dynamic setErrorText(String value) {
     final _$actionInfo = _$HomeControllerBaseActionController.startAction(
         name: 'HomeControllerBase.setErrorText');

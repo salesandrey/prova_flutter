@@ -23,6 +23,13 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     controller.init();
+
+    controller.focus.addListener(() {
+      if (!controller.focus.hasFocus) {
+        FocusScope.of(context).requestFocus(controller.focus);
+      }
+    });
+
     super.initState();
   }
 
@@ -48,6 +55,7 @@ class _HomePageState extends State<HomePage> {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
+                          const SizedBox(height: 30),
                           Card(
                               shape: const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(10.0))),

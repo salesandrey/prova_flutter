@@ -3,6 +3,7 @@
 
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 import 'package:tecnical_test/home/domain/usecases/get_list_usecase.dart';
@@ -34,9 +35,6 @@ abstract class HomeControllerBase with Store {
   setOnUpdateText((bool,int) value) => onUpdateText = value;
 
   @action
-  requestFocus() => focus.requestFocus();
-
-  @action
   init() async {
 
     List<String> result = await _getlist.call();
@@ -56,6 +54,8 @@ abstract class HomeControllerBase with Store {
   @action
   Future<void> addOrUpdate(String value) async {
 
+    SystemChannels.textInput.invokeMethod('TextInput.open');
+
     setErrorText("");
 
     (bool,String) validateText = _validateFields.validateText(value);
@@ -70,7 +70,6 @@ abstract class HomeControllerBase with Store {
 
       await _saveList.call(textList);
 
-      requestFocus();
       editingController.text = "";
     }
 
@@ -83,8 +82,6 @@ abstract class HomeControllerBase with Store {
   Future<void> remove(int index) async {
     textList.removeAt(index);
     await _saveList.call(textList);
-
-    requestFocus();
   }
 
     @action
