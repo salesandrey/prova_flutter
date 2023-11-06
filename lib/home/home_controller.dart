@@ -54,8 +54,6 @@ abstract class HomeControllerBase with Store {
   @action
   Future<void> addOrUpdate(String value) async {
 
-    SystemChannels.textInput.invokeMethod('TextInput.open');
-
     setErrorText("");
 
     (bool,String) validateText = _validateFields.validateText(value);
