@@ -27,6 +27,8 @@ class LoginUseCase{
          return (false, "Falha com a resposta do servidor.");
       } on SocketException {
          return (false, "Sem conexão com a internet para realizar login.");
+      } catch(e) {
+        return (false, "Usuario e/ou Senha invalidos. Tente novamente.");
       }
 
 
