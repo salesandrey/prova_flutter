@@ -9,13 +9,6 @@ Para rodar a autenticação na primeira tela, utilizar as credenciais abaixo:
 account: admin
 senha:1234
 
-**MockAPI**
-
-Foi implementada por ultimo para esta avaliação. Foi criado um usuário de teste com as especificações e realizado a requisição HTTP para ela.
-
-<img width="1680" alt="Screenshot 2023-11-06 at 11 37 28" src="https://github.com/salesandrey/prova_flutter/assets/49326591/ab325fc6-96ab-43b6-bf55-0390ee3958ed">
-
-
 
 **Layout**
 
@@ -42,6 +35,12 @@ Procurei manter o layout próximo descrito na documentação do teste.
     <td><img src="https://github.com/salesandrey/prova_flutter/assets/49326591/5ad80305-6ae7-4c8c-bcdd-e3cccc349355" width="150"></td>
   </tr>
 </table>
+
+**MockAPI**
+
+Foi implementada por ultimo para esta avaliação. Foi criado um usuário de teste com as especificações e realizado a requisição HTTP para ela.
+
+<img width="1680" alt="Screenshot 2023-11-06 at 11 37 28" src="https://github.com/salesandrey/prova_flutter/assets/49326591/ab325fc6-96ab-43b6-bf55-0390ee3958ed">
 
 
 ## Home
