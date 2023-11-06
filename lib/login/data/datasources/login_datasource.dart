@@ -16,7 +16,7 @@ class LoginDataSource {
 
     Uri endpoint = Uri.parse("https://6548ed32dd8ebcd4ab23e58d.mockapi.io/api/v1/login/users?id=0");
 
-      Response response = await get(endpoint);
+      Response response = await get(endpoint).timeout(const Duration(seconds: 6));
 
       if(response.statusCode == 200) {
 
