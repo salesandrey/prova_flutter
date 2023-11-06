@@ -9,7 +9,13 @@ Para rodar a autenticação na primeira tela, utilizar as credenciais abaixo:
 account: admin
 senha:1234
 
-Como o recurso do mockAPI necessitava ser pago, não foi incluso este adicional.
+**MockAPI**
+
+Foi implementada por ultimo para esta avaliação. Foi criado um usuário de teste com as especificações e realizado a requisição HTTP para ela.
+
+<img width="1680" alt="Screenshot 2023-11-06 at 11 37 28" src="https://github.com/salesandrey/prova_flutter/assets/49326591/ab325fc6-96ab-43b6-bf55-0390ee3958ed">
+
+
 
 **Layout**
 
