@@ -19,6 +19,12 @@ class _LoginPageState extends State<LoginPage> {
   final LoginController controller = Modular.get<LoginController>();
 
   @override
+  void initState() {
+    SystemChannels.textInput.invokeMethod('TextInput.hide');
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Observer(builder: (_) {
       return Scaffold(
